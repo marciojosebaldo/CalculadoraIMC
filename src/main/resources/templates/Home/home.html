@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en">
+<html lang="" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,8 +10,8 @@
 </head>
 <body>
 <div class="container">
+    <div th:if="${resultadoImc}" th:utext="${resultadoImc}"></div>
     <h2>Calculadora de IMC</h2>
-
     <form action="/" method="post">
         <div class="input-group mb-3">
             <span class="input-group-text" id="alturaCampo"></span>
