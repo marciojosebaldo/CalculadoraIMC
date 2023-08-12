@@ -26,9 +26,13 @@ public class C_IMC {
                                  @RequestParam("peso") float peso,
                                  Model model) {
 
-        s_imc.calcImc(altura, peso);
+        float resultadoImc = s_imc.calcImc(altura, peso);
+        String mensagemImc = s_imc.tabelaImc(resultadoImc);
 
-        model.addAttribute("resultadoImc", s_imc.calcImc(altura, peso));
+        model.addAttribute("resultadoImc", resultadoImc);
+        model.addAttribute("mensagemImc", mensagemImc);
+        model.addAttribute("altura", altura);
+        model.addAttribute("peso", peso);
 
         return "Home/home";
     }

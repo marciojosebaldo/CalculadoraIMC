@@ -10,18 +10,19 @@
 </head>
 <body>
 <div class="container">
-    <div th:if="${resultadoImc}" th:utext="${resultadoImc}"></div>
+
     <h2>Calculadora de IMC</h2>
+
     <form action="/" method="post">
         <div class="input-group mb-3">
             <span class="input-group-text" id="alturaCampo"></span>
             <input id="altura" name="altura" type="number" class="form-control" placeholder="Altura (cm)" aria-label="altura"
-                   aria-describedby="basic-addon1">
+                   aria-describedby="basic-addon1" th:value="${altura}">
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="pesoCamo"></span>
+            <span class="input-group-text" id="pesoCampo"></span>
             <input id="peso" name="peso" type="number" class="form-control" placeholder="Peso (kg)" aria-label="peso"
-                   aria-describedby="basic-addon1">
+                   aria-describedby="basic-addon1" th:value="${peso}">
         </div>
         <div class="row">
             <div class="col-sm-6">
@@ -30,6 +31,10 @@
             <div class="col-sm-6 text-right"></div>
         </div>
     </form>
+
+    <div th:if="${resultadoImc}" th:utext="${resultadoImc}"></div>
+    <div th:if="${mensagemImc}" th:utext="${mensagemImc}"></div>
+
 </div>
 </body>
 </html>

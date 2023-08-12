@@ -2,6 +2,8 @@ package IMC.IMC.Service;
 
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
+
 @Service
 public class S_IMC {
 
@@ -11,7 +13,9 @@ public class S_IMC {
     String mensagem;
 
     public float calcImc(float altura, float peso) {
-        return resultado = peso / (altura * altura) * 10000;
+        resultado = peso / (altura * altura) * 10000;
+        resultado = Math.round(resultado * 100.0f) / 100.0f;
+        return resultado;
     }
 
     public String tabelaImc(float resultado) {
